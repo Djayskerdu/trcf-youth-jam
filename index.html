@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/logo-circle.png" type="image/png"><link rel="apple-touch-icon" href="/logo.png">
 <script src="config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <title>TRCF Youth Jam</title>
@@ -27,7 +27,7 @@ h3{font:700 1.08rem/1.3 Inter;margin:0 0 .4em}em{font-style:normal;color:var(--a
 .sh{text-align:center;position:relative}.sh h2{font-size:clamp(1.7rem,3.8vw,2.8rem)}.sh p{max-width:620px;margin:0 auto}
 nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:.35s;padding-top:env(safe-area-inset-top,0px)}nav:before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:.35s;background:rgba(10,10,10,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--ln)}nav.sc:before{opacity:1}
 nav .w{display:flex;align-items:center;justify-content:space-between;height:74px}
-.logo{display:flex;gap:10px;align-items:center;font:700 .82rem Inter;letter-spacing:.14em}.logo b{border:2px solid #fff;padding:1px 7px;font:900 .9rem Archivo,Impact;letter-spacing:0}
+.logo{display:flex;gap:10px;align-items:center;font:700 .82rem Inter;letter-spacing:.14em}.logo img{width:36px;height:36px;border-radius:50%;object-fit:cover;display:block}.logo b{border:2px solid #fff;padding:1px 7px;font:900 .9rem Archivo,Impact;letter-spacing:0}
 .links{display:flex;gap:28px;align-items:center;font-size:.84rem;color:#c9c9c9}.links a:hover{color:#fff}
 .btn{display:inline-block;border:1px solid var(--tx);cursor:pointer;font:600 .72rem Inter;letter-spacing:.14em;text-transform:uppercase;padding:15px 28px;border-radius:8px;background:var(--tx);color:#0a0a0a;transition:.3s}
 .btn:hover{background:#b8b8b8;border-color:#b8b8b8;color:#0a0a0a}.btn.o{background:none;color:var(--tx);border-color:rgba(255,255,255,.3)}.btn.o:hover{border-color:var(--tx);background:rgba(255,255,255,.08)}.btn.s{padding:11px 18px;font-size:.66rem}
@@ -97,11 +97,11 @@ nav:before{background:rgba(2,3,12,.85)}
 .lt{color:#0a1230}.lt .mu{color:#4a5688}.lt .lead{color:#26306a}.lt .lab,.lt em{color:#0c2f9a}.lt .gh{color:rgba(12,47,154,.08)}
 /* ===== END BLUE THEME ===== */
 </style></head><body>
-<nav id="nv"><div class="w"><a href="#/" class="logo"><b>YJ</b>TRCF YOUTH JAM</a>
+<nav id="nv"><div class="w"><a href="#/" class="logo"><img src="/logo.png" alt="YJ">TRCF YOUTH JAM</a>
 <div class="links" id="links"><a href="#/">Home</a><a href="#about">About</a><a href="#events">Events</a><a href="#lifegroups">LifeGroups</a><a href="#media">Media</a><a href="#/daily-verse">Daily Verse</a><a href="#news">Announcements</a><a href="#contact">Contact</a><a class="btn s" href="#/join" data-join>Join Us</a></div>
 <button id="bg" aria-label="Menu">&#9776;</button></div></nav>
 <main id="app"></main>
-<footer><div class="w"><div class="f"><div><div class="logo" style="color:var(--tx);margin-bottom:14px"><b>YJ</b>TRCF YOUTH JAM</div><p style="max-width:300px">Connect. Grow. Serve. Make Disciples.<br>The youth ministry of The Redeemed Christian Fellowship.</p></div><div><h4>Quick Links</h4><a href="#/">Home</a><a href="#about">About</a><a href="#events">Events</a><a href="#lifegroups">LifeGroups</a><a href="#/daily-verse">Daily Verse</a></div><div><h4>Service Time</h4><p id="fsv">Saturdays, 5:00 PM<br>TRCF Main Hall</p><a href="#/admin">Admin</a></div><div><h4>Follow Us</h4><a id="ffb" href="#contact">Facebook</a><a id="fig" href="#contact">Instagram</a><a id="fyt" href="#contact">YouTube</a></div></div>
+<footer><div class="w"><div class="f"><div><div class="logo" style="color:var(--tx);margin-bottom:14px"><img src="/logo.png" alt="YJ">TRCF YOUTH JAM</div><p style="max-width:300px">Connect. Grow. Serve. Make Disciples.<br>The youth ministry of The Redeemed Christian Fellowship.</p></div><div><h4>Quick Links</h4><a href="#/">Home</a><a href="#about">About</a><a href="#events">Events</a><a href="#lifegroups">LifeGroups</a><a href="#/daily-verse">Daily Verse</a></div><div><h4>Service Time</h4><p id="fsv">Saturdays, 5:00 PM<br>TRCF Main Hall</p><a href="#/admin">Admin</a></div><div><h4>Follow Us</h4><a id="ffb" href="#contact">Facebook</a><a id="fig" href="#contact">Instagram</a><a id="fyt" href="#contact">YouTube</a></div></div>
 <p style="margin-top:50px;border-top:1px solid var(--ln);padding-top:24px">&copy; 2026 TRCF Youth Jam. All Rights Reserved. &middot; The Redeemed Christian Fellowship</p></div></footer>
 <div id="lb"></div><script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <div class="modal" id="modal"><div id="mb"></div></div>
@@ -150,7 +150,7 @@ let y=Math.max(300,Math.min(520,(H-total)/2-30));
 // ghost word
 const gw=String(o.k||"").split(" ")[0].toUpperCase();x.font=F1(200);const gs=Math.min(330,200*1000/Math.max(1,x.measureText(gw).width));x.font=F1(gs);x.textBaseline="alphabetic";x.textAlign="left";
 // header
-x.strokeStyle="#fff";x.lineWidth=5;x.strokeRect(X,150,100,70);x.fillStyle="#fff";x.textAlign="center";x.textBaseline="middle";x.font=F1(40);x.fillText("YJ",X+50,186);x.textAlign="left";x.font=`700 34px Inter,sans-serif`;LS("4px");x.fillText("TRCF YOUTH JAM",X+125,186);LS("0px");x.textBaseline="alphabetic";
+try{const lg=await new Promise((r,j)=>{const i=new Image();i.onload=()=>r(i);i.onerror=j;i.src="/logo.png"});x.save();x.beginPath();x.arc(X+50,185,50,0,Math.PI*2);x.clip();x.drawImage(lg,X,135,100,100);x.restore();x.strokeStyle="rgba(255,255,255,.35)";x.lineWidth=2;x.beginPath();x.arc(X+50,185,50,0,Math.PI*2);x.stroke()}catch(e){}x.fillStyle="#fff";x.textBaseline="middle";x.textAlign="left";x.font=`700 34px Inter,sans-serif`;LS("4px");x.fillText("TRCF YOUTH JAM",X+125,186);LS("0px");x.textBaseline="alphabetic";
 // kicker with line
 x.fillStyle="#8fa3ff";x.fillRect(X,y+8,90,3);x.fillStyle="#8fa3ff";x.font=`700 30px Inter,sans-serif`;LS("6px");x.fillText(String(o.k||"").toUpperCase(),X+118,y+20);LS("0px");y+=70;
 // image
