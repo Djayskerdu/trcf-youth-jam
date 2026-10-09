@@ -137,7 +137,7 @@ const W=1080,H=1920,X=90,CW=900,c=document.createElement("canvas");c.width=W;c.h
 const LS=v=>{try{x.letterSpacing=v}catch(e){}};
 const F1=s=>`900 ${s}px Archivo,Impact,sans-serif`,F2=s=>`500 ${s}px Inter,system-ui,sans-serif`;
 // background
-let g;x.fillStyle="#03051a";x.fillRect(0,0,W,H);
+let g=x.createLinearGradient(0,0,W,H);g.addColorStop(0,"#000000");g.addColorStop(.5,"#02041c");g.addColorStop(1,"#0008bd");x.fillStyle=g;x.fillRect(0,0,W,H);
 x.strokeStyle="rgba(255,255,255,.14)";x.lineWidth=2;rr(x,36,36,W-72,H-72,44);x.stroke();
 // content measure
 let im=null;if(o.img){try{im=await new Promise((r,j)=>{const i=new Image();i.crossOrigin="anonymous";i.onload=()=>r(i);i.onerror=j;i.src=o.img})}catch(e){im=null}}
