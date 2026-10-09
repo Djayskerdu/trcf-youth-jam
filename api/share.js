@@ -16,10 +16,11 @@ async function getCfg(host) {
 
 async function row(c, table, id) {
   const r = await fetch(c.url + "/rest/v1/" + table + "?id=eq." + encodeURIComponent(id) + "&select=data", {
-    headers: { apikey: c.key, Authorization: "Bearer " + c.key },
+    headers: { apikey: c.key },
   });
   const j = await r.json();
-  return j && j[0] && j[0].data;
+  if (!Array.isArray(j)) throw new Error("lookup failed: " + JSON.stringify(j));
+  return j[0] && j[0].data;
 }
 
 module.exports = async (req, res) => {
@@ -58,7 +59,7 @@ module.exports = async (req, res) => {
       dest = "/#/daily-verse";
     }
   } catch (err) {
-    /* fall back to the default preview */
+    console.error("share preview fallback:", err && err.message);
   }
 
   title = clip(title, 90);
@@ -72,6 +73,7 @@ module.exports = async (req, res) => {
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:image" content="${esc(image)}">
+<meta property="og:image:secure_url" content="${esc(image)}">
 <meta property="og:url" content="${esc(url)}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(title)}">
