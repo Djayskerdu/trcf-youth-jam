@@ -18,14 +18,14 @@ h3{font:700 1.08rem/1.3 Inter;margin:0 0 .4em}em{font-style:normal;color:var(--a
 .lt{background:var(--lt);color:#111;clip-path:polygon(0 4vw,100% 0,100% calc(100% - 4vw),0 100%);margin:-3vw 0;padding:calc(110px + 4vw) 0}.lt .mu{color:#555}.lt .lead{color:#333}.lt .lab{color:#555}.lt .gh{color:rgba(0,0,0,.07)}.lt em{color:#555}
 .gh{font:900 clamp(3.2rem,13vw,10rem)/.85 Archivo,Impact,sans-serif;font-stretch:125%;text-transform:uppercase;text-align:center;color:rgba(255,255,255,.06);margin:0 0 -.42em;letter-spacing:-.02em;user-select:none;pointer-events:none;white-space:nowrap;overflow:hidden}
 .sh{text-align:center;position:relative}.sh h2{font-size:clamp(1.7rem,3.8vw,2.8rem)}.sh p{max-width:620px;margin:0 auto}
-nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:.35s;padding-top:env(safe-area-inset-top,0px)}nav.sc{background:rgba(10,10,10,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--ln)}
+nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:.35s;padding-top:env(safe-area-inset-top,0px)}nav:before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:.35s;background:rgba(10,10,10,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--ln)}nav.sc:before{opacity:1}
 nav .w{display:flex;align-items:center;justify-content:space-between;height:74px}
 .logo{display:flex;gap:10px;align-items:center;font:700 .82rem Inter;letter-spacing:.14em}.logo b{border:2px solid #fff;padding:1px 7px;font:900 .9rem Archivo,Impact;letter-spacing:0}
 .links{display:flex;gap:28px;align-items:center;font-size:.84rem;color:#c9c9c9}.links a:hover{color:#fff}
 .btn{display:inline-block;border:1px solid var(--tx);cursor:pointer;font:600 .72rem Inter;letter-spacing:.14em;text-transform:uppercase;padding:15px 28px;border-radius:8px;background:var(--tx);color:#0a0a0a;transition:.3s}
 .btn:hover{background:#b8b8b8;border-color:#b8b8b8;color:#0a0a0a}.btn.o{background:none;color:var(--tx);border-color:rgba(255,255,255,.3)}.btn.o:hover{border-color:var(--tx);background:rgba(255,255,255,.08)}.btn.s{padding:11px 18px;font-size:.66rem}
 #bg{display:none;background:none;border:0;color:var(--tx);width:44px;height:44px;font-size:1.4rem;z-index:70}
-@media(max-width:900px){#bg{display:block}.links{position:fixed;inset:0;background:var(--bg);flex-direction:column;justify-content:center;gap:22px;font:900 1.6rem Archivo,Impact;text-transform:uppercase;opacity:0;pointer-events:none;transition:.4s}.links.open{opacity:1;pointer-events:auto}section{padding:80px 0}}
+@media(max-width:900px){#bg{display:block;position:relative}.links{position:fixed;inset:0;height:100vh;height:100dvh;overflow-y:auto;z-index:1;background:var(--bg);flex-direction:column;justify-content:center;gap:22px;font:900 1.6rem Archivo,Impact;text-transform:uppercase;opacity:0;pointer-events:none;transition:.4s}.links.open{opacity:1;pointer-events:auto}section{padding:80px 0}}
 .hero{min-height:100svh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;padding-top:120px;text-align:center;clip-path:polygon(0 0,100% 0,100% calc(100% - 3vw),0 100%);padding-bottom:3vw}
 .hero .g{position:absolute;inset:-25%;background:radial-gradient(40% 45% at 50% 20%,rgba(255,255,255,.2),transparent 70%),conic-gradient(from 195deg at 50% -8%,transparent 0 9%,rgba(255,255,255,.09) 13%,transparent 17%,rgba(255,255,255,.07) 23%,transparent 27%,rgba(255,255,255,.09) 33%,transparent 38%,rgba(255,255,255,.06) 44%,transparent 50%);animation:dr 16s infinite alternate ease-in-out}
 .hero .v{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.3),rgba(10,10,10,.92))}
@@ -71,6 +71,21 @@ footer{border-top:1px solid var(--ln);padding:70px 0 40px;font-size:.88rem;color
 .mt{position:relative;overflow:hidden;background-color:#111}.mt img,.mt video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.mt span{position:relative;text-shadow:0 1px 8px #000}.li{position:relative;overflow:hidden}.li video,.li img{width:100%;height:100%;object-fit:contain}.gate{padding-top:150px;text-align:center}
 .gr:empty:before,.mg:empty:before{content:"Nothing here yet. Check back soon.";color:var(--mu);grid-column:1/-1;text-align:center;padding:30px}
 .mt.fd{grid-row:auto!important;min-height:150px}.mt.fd:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.75));z-index:1}.mt.fd span{z-index:2}
+/* ===== BLUE THEME (delete this block to go back to black & white) ===== */
+:root{--bg:#02030c;--s:#070b24;--s2:#0b1238;--ln:rgba(110,130,255,.18);--ac:#0c2f9a;--au:#8fa3ff;--pu:#0c2f9a;--lt:#ffffff;--mu:#8e98c9}
+body{background:linear-gradient(90deg,#000000 0%,#02041c 55%,#040a48 100%) fixed}
+nav:before{background:rgba(2,3,12,.85)}
+.btn{background:linear-gradient(90deg,#0c2f9a,#0008bd);border-color:#0c2f9a;color:#fff}
+.btn:hover{background:#fff;border-color:#fff;color:#0008bd}
+.btn.o{background:none;color:#fff;border-color:rgba(143,163,255,.45)}
+.btn.o:hover{border-color:#8fa3ff;background:rgba(12,47,154,.3);color:#fff}
+.lab:before{height:2px;background:linear-gradient(90deg,rgba(0,0,0,0),#0008bd)}
+.gh{color:rgba(90,110,255,.08)}
+.hero .g{background:radial-gradient(40% 45% at 50% 20%,rgba(12,47,154,.6),transparent 70%),conic-gradient(from 195deg at 50% -8%,transparent 0 9%,rgba(0,8,189,.22) 13%,transparent 17%,rgba(12,47,154,.2) 23%,transparent 27%,rgba(0,8,189,.22) 33%,transparent 38%,rgba(12,47,154,.16) 44%,transparent 50%)}
+.hero .v{background:linear-gradient(180deg,rgba(2,3,12,.3),rgba(2,3,12,.92))}
+.big{background:#070b24}.qt{border-left-color:#0c2f9a}
+.lt{color:#0a1230}.lt .mu{color:#4a5688}.lt .lead{color:#26306a}.lt .lab,.lt em{color:#0c2f9a}.lt .gh{color:rgba(12,47,154,.08)}
+/* ===== END BLUE THEME ===== */
 </style></head><body>
 <nav id="nv"><div class="w"><a href="#/" class="logo"><b>YJ</b>TRCF YOUTH JAM</a>
 <div class="links" id="links"><a href="#/">Home</a><a href="#about">About</a><a href="#events">Events</a><a href="#lifegroups">LifeGroups</a><a href="#media">Media</a><a href="#/daily-verse">Daily Verse</a><a href="#news">Announcements</a><a href="#contact">Contact</a><a class="btn s" href="#/join" data-join>Join Us</a></div>
